@@ -94,6 +94,7 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
 # powerline option
+# source /usr/local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
 # export POWERLINE_HIDE_HOST_NAME="true"
 
 # Qt binary setup
