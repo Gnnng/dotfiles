@@ -1,0 +1,20 @@
+[user]
+	name = Gnnng
+	email = gnnnnng@gmail.com
+[push]
+	default = simple
+[core]
+#    autocrlf = true
+#    safecrlf = true
+    editor = vim
+    trailing-space = true
+	excludesfile = ~/.gitignore_global
+
+[color]
+    ui = true
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true

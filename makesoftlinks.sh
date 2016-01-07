@@ -11,6 +11,8 @@ vimrc
 zshrc
 ycm_extra_conf.py
 tmux.conf
+gitconfig
+gitignore_global
 "                                   # list of files/folders to symlink in homedir
 
 ##########
