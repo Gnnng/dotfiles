@@ -38,6 +38,14 @@ Plugin 'tomasr/molokai'
 Plugin 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'scrooloose/nerdcommenter'
 
+Plugin 'thinca/vim-quickrun'
+" Let quickrun print on message box which could continue edit after any key
+let g:quickrun_config = {
+            \   "_" : {
+            \       "outputter" : "message",
+            \   },
+            \}
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
