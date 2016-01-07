@@ -36,6 +36,7 @@ Plugin 'rdnetto/YCM-Generator'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'tomasr/molokai'
 Plugin 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
+Plugin 'scrooloose/nerdcommenter'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -58,7 +59,6 @@ filetype plugin indent on    " required
 set number
 set backspace=eol,start,indent
 set whichwrap+=<,>,h,l
-
 set ignorecase
 
 set smartcase
