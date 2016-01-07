@@ -1,6 +1,10 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
+" ====================
+" Vundle 
+" ====================
+"
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -31,11 +35,24 @@ Plugin 'vim-pandoc/vim-pandoc'
 Plugin 'vim-pandoc/vim-pandoc-syntax' 
 
 Plugin 'Valloric/YouCompleteMe'
+let g:ycm_global_ycm_extra_conf = '/Users/Gnnng/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py'
+
+nnoremap <leader>gl :YcmCompleter GoToDeclaration<CR>
+nnoremap <leader>gf :YcmCompleter GoToDefinition<CR>
+nnoremap <leader>gg :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
 Plugin 'scrooloose/syntastic'
+
 Plugin 'rdnetto/YCM-Generator'
+
 Plugin 'altercation/vim-colors-solarized'
+
 Plugin 'tomasr/molokai'
+
 Plugin 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
+" must set to 2 when use powerline
+set laststatus=2
+
 Plugin 'scrooloose/nerdcommenter'
 
 Plugin 'thinca/vim-quickrun'
@@ -63,73 +80,40 @@ filetype plugin indent on    " required
 "
 "
 
-"=================== Custom Config ==================
+" ==================
+" Custom Config
+" ==================
+colorscheme molokai
+syntax enable
+
 set number
 set backspace=eol,start,indent
 set whichwrap+=<,>,h,l
 set ignorecase
-
 set smartcase
-
 set hlsearch
-
 set incsearch
-
 set ruler
-
 set magic
-
 set mat=2
-
-syntax enable
-
 set encoding=utf8
-
 set ffs=unix,dos,mac
-
 set expandtab
-
 "set smarttab
-
 set shiftwidth=4
 set tabstop=4
 
+set nofoldenable
+
+" fast navigation between windows
 map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
 
+" restore last cursor position in existing file
 autocmd BufReadPost *
      \ if line("'\"") > 0 && line("'\"") <= line("$") |
      \   exe "normal! g`\"" |
      \ endif
-
-
-""""""""""""""""""""""""""""""
-" => Status line
-" """"""""""""""""""""""""""""""
-" " Always show the status line
-set laststatus=2
-"
-" " Format the status line
-set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l 
-
-" Returns true if paste mode is enabled
-function! HasPaste()
-    if &paste
-        return 'PASTE MODE  '
-    en
-    return ''
-endfunction
-
-let g:ycm_global_ycm_extra_conf = '/Users/Gnnng/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py'
-
-colorscheme molokai
-
-nnoremap <leader>gl :YcmCompleter GoToDeclaration<CR>
-nnoremap <leader>gf :YcmCompleter GoToDefinition<CR>
-nnoremap <leader>gg :YcmCompleter GoToDefinitionElseDeclaration<CR>
-
-set nofoldenable
-"set foldmethod=manual
 
