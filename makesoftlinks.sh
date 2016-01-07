@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# This script creates symlinks
+# This script creates symlinks and only can be run when in first setup
 
 ########## Variables
 
