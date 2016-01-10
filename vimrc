@@ -86,23 +86,31 @@ filetype plugin indent on    " required
 colorscheme molokai
 syntax enable
 
+" display line number
 set number
+
+" when backspace key works at these situations
 set backspace=eol,start,indent
+
+" move across lines
 set whichwrap+=<,>,h,l
+
+" about search
 set ignorecase
 set smartcase
 set hlsearch
 set incsearch
+
+" display cursor pos in status line
 set ruler
-set magic
-set mat=2
-set encoding=utf8
-set ffs=unix,dos,mac
+
+" about indent
 set expandtab
 "set smarttab
 set shiftwidth=4
-set tabstop=4
+set softtabstop=4
 
+" not fold
 set nofoldenable
 
 " fast navigation between windows
