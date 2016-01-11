@@ -104,6 +104,9 @@ set incsearch
 " display cursor pos in status line
 set ruler
 
+" set column ruler
+set colorcolumn=80
+
 " about indent
 set expandtab
 "set smarttab
