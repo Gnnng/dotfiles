@@ -108,10 +108,14 @@ set ruler
 set colorcolumn=80
 
 " about indent
-set expandtab
-"set smarttab
+set expandtab " always replace tabs with spaces
+
+" combined settings
 set shiftwidth=4
 set softtabstop=4
+
+" control how '\t' is displayed in vim
+set tabstop=4
 
 " not fold
 set nofoldenable
