@@ -105,7 +105,7 @@ set incsearch
 set ruler
 
 " set column ruler
-set colorcolumn=80
+set colorcolumn=77
 
 " about indent
 set expandtab " always replace tabs with spaces
