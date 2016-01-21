@@ -120,6 +120,9 @@ set tabstop=4
 " not fold
 set nofoldenable
 
+" show what you are typing as a command
+set showcmd
+
 " fast navigation between windows
 map <C-j> <C-W>j
 map <C-k> <C-W>k
