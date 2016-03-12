@@ -63,6 +63,18 @@ let g:quickrun_config = {
             \   },
             \}
 
+Plugin 'scrooloose/nerdtree'
+map <leader>n :NERDTreeToggle<CR>
+
+Plugin 'trusktr/seti.vim'
+
+Plugin 'zenorocha/dracula-theme', {'rtp': 'vim/'}
+
+Plugin 'fatih/vim-go'
+
+Plugin 'majutsushi/tagbar'
+map <leader>t :TagbarToggle<CR>
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -83,7 +95,8 @@ filetype plugin indent on    " required
 " ==================
 " Custom Config
 " ==================
-colorscheme molokai
+set background=dark
+colorscheme seti
 syntax enable
 
 " display line number
@@ -105,7 +118,7 @@ set incsearch
 set ruler
 
 " set column ruler
-set colorcolumn=77
+set colorcolumn=80
 
 " about indent
 set expandtab " always replace tabs with spaces
@@ -134,4 +147,7 @@ autocmd BufReadPost *
      \ if line("'\"") > 0 && line("'\"") <= line("$") |
      \   exe "normal! g`\"" |
      \ endif
+
+" Add powerline font settings for Macvim
+set guifont=Source\ code\ Pro\ for\ Powerline
 
