@@ -100,7 +100,7 @@ colorscheme seti
 syntax enable
 
 " display line number
-set number
+"set number
 
 " when backspace key works at these situations
 set backspace=eol,start,indent
