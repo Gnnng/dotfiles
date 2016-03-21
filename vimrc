@@ -37,9 +37,9 @@ Plugin 'vim-pandoc/vim-pandoc-syntax'
 Plugin 'Valloric/YouCompleteMe'
 let g:ycm_global_ycm_extra_conf = '/Users/Gnnng/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py'
 
-nnoremap <leader>gl :YcmCompleter GoToDeclaration<CR>
-nnoremap <leader>gf :YcmCompleter GoToDefinition<CR>
-nnoremap <leader>gg :YcmCompleter GoToDefinitionElseDeclaration<CR>
+"nnoremap <leader>gl :YcmCompleter GoToDeclaration<CR>
+"nnoremap <leader>gf :YcmCompleter GoToDefinition<CR>
+"nnoremap <leader>gg :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 Plugin 'scrooloose/syntastic'
 
@@ -71,9 +71,21 @@ Plugin 'trusktr/seti.vim'
 Plugin 'zenorocha/dracula-theme', {'rtp': 'vim/'}
 
 Plugin 'fatih/vim-go'
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_interfaces = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+let g:go_fmt_fail_silently = 1
+
 
 Plugin 'majutsushi/tagbar'
 map <leader>t :TagbarToggle<CR>
+
+Plugin 'Raimondi/delimitMate'
+
+Plugin 'airblade/vim-gitgutter'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -151,3 +163,14 @@ autocmd BufReadPost *
 " Add powerline font settings for Macvim
 set guifont=Source\ code\ Pro\ for\ Powerline
 
+au FileType go nmap <Leader>i <Plug>(go-info)
+
+au FileType go nmap <Leader>ds <Plug>(go-def-split)
+au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
+au FileType go nmap <Leader>dt <Plug>(go-def-tab)
+
+if has("gui_running")
+    set guioptions=
+    set guifont=Roboto\ Mono\ Light\ for\ Powerline:h15
+    set cul
+endif
