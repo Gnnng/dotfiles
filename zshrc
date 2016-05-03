@@ -47,7 +47,7 @@ HIST_STAMPS="mm/dd/yyyy"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git gitignore osx zsh-syntax-highlighting autojump brew pip)
+plugins=(git gitignore osx zsh-syntax-highlighting autojump brew pip git-flow git-flow-completion)
 
 # User configuration
 
@@ -80,13 +80,15 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-. ~/.zsh_alias
+# . ~/.zsh_alias
 
 export GOPATH=$HOME/workspace/go
-export PATH=$PATH:$GOPATH/bin
+export GOROOT=/usr/local/opt/go/libexec
+
+# completion configuration
+autoload -U compinit && compinit
 
 # autojump configuration
-autoload -U compinit && compinit
 # [[ -s ~/.autojump/etc/profile.d/autojump.sh ]] && . ~/.autojump/etc/profile.d/autojump.sh
 [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
 
@@ -98,6 +100,14 @@ export LANG=en_US.UTF-8
 # export POWERLINE_HIDE_HOST_NAME="true"
 
 # Qt binary setup
-export PATH=$PATH:/Users/Gnnng/Qt5.4.2/5.4/clang_64/bin
+#export PATH=$PATH:/Users/Gnnng/Qt5.4.2/5.4/clang_64/bin
+
+export PATH=$PATH:/usr/local/opt/go/libexec/bin
+export PATH=$PATH:$GOPATH/bin
 
 test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_integration.zsh
+
+
+# some credentials
+source ~/.zsh_secret
+
