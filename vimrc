@@ -1,7 +1,3 @@
-" ====================
-" Vundle 
-" ====================
-"
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -13,184 +9,28 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
-
-" The following are examples of different formats supported.
-" Keep Plugin commands between vundle#begin/end.
-" plugin on GitHub repo
-Plugin 'tpope/vim-fugitive'
-" plugin from http://vim-scripts.org/vim/scripts.html
-Plugin 'L9'
-" Git plugin not hosted on GitHub
-Plugin 'git://git.wincent.com/command-t.git'
-" git repos on your local machine (i.e. when working on your own plugin)
-" Plugin 'file:///home/gmarik/path/to/plugin'
-" The sparkup vim script is in a subdirectory of this repo called vim.
-" Pass the path to set the runtimepath properly.
-" Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-" Install L9 and avoid a Naming conflict if you've already installed a
-" different version somewhere else.
-" Plugin 'ascenator/L9', {'name': 'newL9'}
-
-Plugin 'vim-pandoc/vim-pandoc'
-
-Plugin 'vim-pandoc/vim-pandoc-syntax' 
-
-"Plugin 'Valloric/YouCompleteMe'
-"let g:ycm_global_ycm_extra_conf = '/Users/Gnnng/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py'
-
-"nnoremap <leader>gl :YcmCompleter GoToDeclaration<CR>
-"nnoremap <leader>gf :YcmCompleter GoToDefinition<CR>
-"nnoremap <leader>gg :YcmCompleter GoToDefinitionElseDeclaration<CR>
-
-Plugin 'scrooloose/syntastic'
-
-"Plugin 'rdnetto/YCM-Generator'
-
-Plugin 'Shougo/neocomplete'
-"Note: This option must set it in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
-" Disable AutoComplPop.
-let g:acp_enableAtStartup = 0
-" Use neocomplete.
-let g:neocomplete#enable_at_startup = 1
-" Use smartcase.
-let g:neocomplete#enable_smart_case = 1
-" Set minimum syntax keyword length.
-let g:neocomplete#sources#syntax#min_keyword_length = 3
-let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
-
-" Define dictionary.
-let g:neocomplete#sources#dictionary#dictionaries = {
-    \ 'default' : '',
-    \ 'vimshell' : $HOME.'/.vimshell_hist',
-    \ 'scheme' : $HOME.'/.gosh_completions'
-        \ }
-
-" Define keyword.
-if !exists('g:neocomplete#keyword_patterns')
-    let g:neocomplete#keyword_patterns = {}
-endif
-let g:neocomplete#keyword_patterns['default'] = '\h\w*'
-
-" Plugin key-mappings.
-inoremap <expr><C-g>     neocomplete#undo_completion()
-inoremap <expr><C-l>     neocomplete#complete_common_string()
-
-" Recommended key-mappings.
-" <CR>: close popup and save indent.
-inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-function! s:my_cr_function()
-  return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
-  " For no inserting <CR> key.
-  "return pumvisible() ? "\<C-y>" : "\<CR>"
-endfunction
-" <TAB>: completion.
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-" <C-h>, <BS>: close popup and delete backword char.
-inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
-inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
-" Close popup by <Space>.
-"inoremap <expr><Space> pumvisible() ? "\<C-y>" : "\<Space>"
-
-" AutoComplPop like behavior.
-"let g:neocomplete#enable_auto_select = 1
-
-" Shell like behavior(not recommended).
-"set completeopt+=longest
-"let g:neocomplete#enable_auto_select = 1
-"let g:neocomplete#disable_auto_complete = 1
-"inoremap <expr><TAB>  pumvisible() ? "\<Down>" : "\<C-x>\<C-u>"
-
-" Enable omni completion.
-autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-
-" Enable heavy omni completion.
-if !exists('g:neocomplete#sources#omni#input_patterns')
-  let g:neocomplete#sources#omni#input_patterns = {}
-endif
-"let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
-"let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
-"let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
-
-" For perlomni.vim setting.
-" https://github.com/c9s/perlomni.vim
-let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
-" neocomplete configuration ends
-
-Plugin 'altercation/vim-colors-solarized'
-
-Plugin 'tomasr/molokai'
-
-Plugin 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
-" must set to 2 when use powerline
-set laststatus=2
-
-Plugin 'scrooloose/nerdcommenter'
-
-Plugin 'thinca/vim-quickrun'
-" Let quickrun print on message box which could continue edit after any key
-let g:quickrun_config = {
-            \   "_" : {
-            \       "outputter" : "message",
-            \   },
-            \}
-
-Plugin 'scrooloose/nerdtree'
-map <leader>n :NERDTreeToggle<CR>
-
-Plugin 'trusktr/seti.vim'
-
-Plugin 'zenorocha/dracula-theme', {'rtp': 'vim/'}
-
-Plugin 'fatih/vim-go'
-au FileType go nmap <leader>r <Plug>(go-run)
-"au FileType go nmap <leader>b <Plug>(go-build)
-au FileType go nmap <leader>t <Plug>(go-test)
-au FileType go nmap <leader>c <Plug>(go-coverage)
-au FileType go nmap <leader>e <Plug>(go-alternate-split)
-
-au FileType go nmap <Leader>i <Plug>(go-info)
-au FileType go nmap <Leader>ds <Plug>(go-def-split)
-au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
-au FileType go nmap <Leader>dt <Plug>(go-def-tab)
-
-"au FileType go nmap gr <Plug>(go-rename)
-
-" Fix lagging issue when saving files
-let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
-let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
-
-
-let g:go_highlight_functions = 1
-let g:go_highlight_methods = 1
-let g:go_highlight_structs = 1
-let g:go_highlight_interfaces = 1
-let g:go_highlight_operators = 1
-let g:go_highlight_build_constraints = 1
-let g:go_fmt_fail_silently = 1
-let g:go_fmt_command = "goimports"
-"vim-go configuration ends
-
-
-Plugin 'majutsushi/tagbar'
-map <leader>b :TagbarToggle<CR>
-
-"Plugin 'Raimondi/delimitMate'
-
+Plugin 'dracula/vim'
 Plugin 'airblade/vim-gitgutter'
-
-Plugin 'pyte'
-
-Plugin 'endel/vim-github-colorscheme'
-
+Plugin 'vim-airline/vim-airline'
+    set laststatus=2 " required by vim-airline
+Plugin 'scrooloose/nerdtree'
+    map <leader>n :NERDTreeToggle<CR>
+Plugin 'majutsushi/tagbar'
+    map <leader>b :TagbarToggle<CR>
+Plugin 'kien/ctrlp.vim'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'Valloric/YouCompleteMe'
+    let g:ycm_global_ycm_extra_conf = '/Users/Gnnng/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py'
+    let g:ycm_python_binary_path = 'python'
+    nnoremap <leader>gl :YcmCompleter GoToDeclaration<CR>
+    nnoremap <leader>gf :YcmCompleter GoToDefinition<CR>
+    nnoremap <leader>gg :YcmCompleter GoToDefinitionElseDeclaration<CR>
+Plugin 'rdnetto/YCM-Generator'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
-"filetype plugin on
+" filetype plugin on
 "
 " Brief help
 " :PluginList       - lists configured plugins
@@ -203,70 +43,37 @@ filetype plugin indent on    " required
 "
 "
 
-" ==================
-" Custom Config
-" ==================
-colorscheme seti
-set background=dark
-syntax enable
+" Basic settings
 
-" display line number
-"set number
-
-" when backspace key works at these situations
+" when backspace key works
 set backspace=eol,start,indent
-
+" enable syntax highlighting
+syntax on
 " move across lines
 set whichwrap+=<,>,h,l
-
 " about search
-set ignorecase
-set smartcase
-set hlsearch
-set incsearch
-
-" display cursor pos in status line
-set ruler
-
+set ignorecase smartcase hlsearch incsearch
 " set column ruler
 set colorcolumn=80
-
-" about indent
-set expandtab " always replace tabs with spaces
-
-" combined settings
-set shiftwidth=4
-set softtabstop=4
-
-" control how '\t' is displayed in vim
-set tabstop=4
-
-" not fold
-set nofoldenable
-
+" highlight the editing line
+set cursorline
 " show what you are typing as a command
 set showcmd
-
 " fast navigation between windows
 map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
-
 " restore last cursor position in existing file
 autocmd BufReadPost *
      \ if line("'\"") > 0 && line("'\"") <= line("$") |
      \   exe "normal! g`\"" |
      \ endif
+" remove any trailing whitespace
+autocmd BufRead,BufWrite * if ! &bin | silent! %s/\s\+$//ge | endif
+" about indent
+set expandtab smarttab shiftwidth=4 softtabstop=4 tabstop=4
+" color
+color dracula
+set background=dark
 
-" Add powerline font settings for Macvim
-set guifont=Source\ code\ Pro\ for\ Powerline
-if has("gui_running")
-    set guioptions=
-    "set guifont=Roboto\ Mono\ for\ Powerline:h14
-    colors github
-    set bg=dark
-    set bg=light
-    set guifont=Meslo\ LG\ S\ for\ Powerline:h14
-    set cul
-endif
