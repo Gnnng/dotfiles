@@ -28,6 +28,7 @@ Plugin 'majutsushi/tagbar'
     map <leader>b :TagbarToggle<CR>
 Plugin 'kien/ctrlp.vim'
     nnoremap <leader>o :CtrlP<CR>
+    let g:ctrlp_extensions = ['buffertag', 'tag', 'line', 'dir']
 Plugin 'scrooloose/nerdcommenter'
     let g:NERDSpaceDelims=1
 Plugin 'Valloric/YouCompleteMe'
@@ -35,14 +36,18 @@ Plugin 'Valloric/YouCompleteMe'
     nnoremap <leader>gf :YcmCompleter GoToDefinition<CR>
     nnoremap <leader>gg :YcmCompleter GoToDefinitionElseDeclaration<CR>
     map <F9> :YcmCompleter FixIt<CR>
+    " let g:ycm_confirm_extra_conf = 0
+" Plugin 'Yggdroot/indentLine'
 Plugin 'rdnetto/YCM-Generator'
-Plugin 'chiel92/vim-autoformat'
-    noremap <leader>f :Autoformat<CR> :w<CR>
+" Plugin 'chiel92/vim-autoformat'
+    " noremap <leader>f :Autoformat<CR> :w<CR>
 Plugin 'tpope/vim-sleuth'
 Plugin 'terryma/vim-multiple-cursors'
+Plugin 'ntpeters/vim-better-whitespace'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
+
 " To ignore plugin indent changes, instead use:
 " filetype plugin on
 "
@@ -80,22 +85,17 @@ map <C-h> <C-W>h
 map <C-l> <C-W>l
 " restore last cursor position in existing file
 autocmd BufReadPost *
-     \ if line("'\"") > 0 && line("'\"") <= line("$") |
-     \   exe "normal! g`\"" |
-     \ endif
+    \ if line("'\"") > 0 && line("'\"") <= line("$") |
+    \   exe "normal! g`\"" |
+    \ endif
 " remove any trailing whitespace
-autocmd BufRead,BufWrite * if ! &bin | silent! %s/\s\+$//ge | endif
-" about indent (deprecated due to the plugin sleuth)
-" set expandtab smarttab shiftwidth=4 softtabstop=4 tabstop=4
+" autocmd BufRead,BufWrite * if ! &bin | silent! %s/\s\+$//ge | endif
+" about indent
+set expandtab smarttab shiftwidth=4 softtabstop=4 tabstop=4
 " color
-if (has("termguicolors"))
-    set termguicolors
-endif
-
-color material-theme
+color dracula
 set background=dark
-" mapping
-nnoremap <Enter> :
+set encoding=utf-8
 nnoremap <leader>w :w<CR>
 nnoremap <leader>q :q<CR>
 nnoremap <leader>s :source ~/.vimrc<CR>
@@ -104,7 +104,8 @@ nnoremap <leader>1 1gt<CR>
 nnoremap <leader>2 2gt<CR>
 nnoremap <leader>3 3gt<CR>
 nnoremap <leader>4 4gt<CR>
-nnoremap <leader>5 5gr<CR>
+nnoremap <leader>5 5gt<CR>
+nnoremap <leader>f :py3file ~/.vim/clang-format.py<CR>
 " nnoremap <leader>j :tabprevious<CR>
 " nnoremap <leader>k :tabnext<CR>
 map q: :q
