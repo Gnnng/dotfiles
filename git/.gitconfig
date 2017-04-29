@@ -1,0 +1,7 @@
+[user]
+	email = gnnnnng@gmail.com
+	name = Gong Deli
+[core]
+	editor = vim
+[push]
+	default = simple
