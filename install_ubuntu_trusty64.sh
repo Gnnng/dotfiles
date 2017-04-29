@@ -1,4 +1,6 @@
 #!/bin/bash
+# This script is only for installing all of them at the first time.
+# DO NOT RUN THIS ONE FOR 2ND TIME
 
 dotfiles_dir=$HOME/dotfiles
 
@@ -16,15 +18,21 @@ export PATH="$HOME/.linuxbrew/bin:$PATH"
 ################# For Vim 8.0+
 brew install vim
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-vim +PluginInstall +qall
 
 brew install autojump
 
 # clone antigen
 antigen_dir=$dotfiles_dir/antigen
 git clone https://github.com/zsh-users/antigen.git $antigen_dir
-chsh -s $(which zsh)
 
 # finall, stow them all
 stow_packages="antigen-zsh vim tmux git"
 stow $stow_packages
+
+# read .vimrc and install
+vim +PluginInstall +qall
+
+# read .zshrc and install
+chsh
+
+echo "Run this to switch to zsh: chsh -s \`which zsh\`"
