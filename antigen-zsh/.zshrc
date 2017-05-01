@@ -9,7 +9,6 @@ antigen use oh-my-zsh
 antigen bundle git
 antigen bundle git-extras
 antigen bundle colored-man-pages
-antigen bundle aws
 antigen bundle autojump
 antigen bundle pip
 antigen bundle command-not-found
