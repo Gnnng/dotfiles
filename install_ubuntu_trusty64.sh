@@ -33,6 +33,6 @@ stow $stow_packages
 vim +PluginInstall +qall
 
 # read .zshrc and install
-chsh
+zsh
 
-echo "Run this to switch to zsh: chsh -s \`which zsh\`"
+echo "Run this to switch to zsh: chsh -s \$(which zsh)"
