@@ -6,10 +6,10 @@ antigen use oh-my-zsh
 
 
 # Bundles from the default repo (robbyrussell's oh-my-zsh).
+antigen bundle z
 antigen bundle git
 antigen bundle git-extras
 antigen bundle colored-man-pages
-antigen bundle autojump
 antigen bundle pip
 antigen bundle command-not-found
 
