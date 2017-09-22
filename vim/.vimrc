@@ -38,11 +38,13 @@ Plugin 'rdnetto/YCM-Generator'
 Plugin 'tpope/vim-sleuth'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'ntpeters/vim-better-whitespace'
+Plugin 'rust-lang/rust.vim'
 Plugin 'Valloric/YouCompleteMe'
     nnoremap <leader>gl :YcmCompleter GoToDeclaration<CR>
     nnoremap <leader>gf :YcmCompleter GoToDefinition<CR>
     nnoremap <leader>gg :YcmCompleter GoToDefinitionElseDeclaration<CR>
     map <F9> :YcmCompleter FixIt<CR>
+    let g:ycm_rust_src_path = '/home/gnnng/workspace/rust/src'
     " let g:ycm_confirm_extra_conf = 0
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
