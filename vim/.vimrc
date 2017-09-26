@@ -39,13 +39,13 @@ Plugin 'tpope/vim-sleuth'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'rust-lang/rust.vim'
-Plugin 'Valloric/YouCompleteMe'
-    nnoremap <leader>gl :YcmCompleter GoToDeclaration<CR>
-    nnoremap <leader>gf :YcmCompleter GoToDefinition<CR>
-    nnoremap <leader>gg :YcmCompleter GoToDefinitionElseDeclaration<CR>
-    map <F9> :YcmCompleter FixIt<CR>
-    let g:ycm_rust_src_path = '/home/gnnng/workspace/rust/src'
-    " let g:ycm_confirm_extra_conf = 0
+" Plugin 'Valloric/YouCompleteMe'
+    " nnoremap <leader>gl :YcmCompleter GoToDeclaration<CR>
+    " nnoremap <leader>gf :YcmCompleter GoToDefinition<CR>
+    " nnoremap <leader>gg :YcmCompleter GoToDefinitionElseDeclaration<CR>
+    " map <F9> :YcmCompleter FixIt<CR>
+    " let g:ycm_rust_src_path = '/home/gnnng/workspace/rust/src'
+    " " let g:ycm_confirm_extra_conf = 0
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -112,3 +112,36 @@ nnoremap <leader>f :py3file ~/.vim/clang-format.py<CR>
 " nnoremap <leader>k :tabnext<CR>
 map q: :q
 set pastetoggle=<F10>
+" add cscope
+if has("cscope")
+    set csprg=/usr/bin/cscope
+    set csto=0
+    set cst
+    set nocsverb
+    " add any database in current directory
+    if filereadable("cscope.out")
+        cs add cscope.out
+    " else add database pointed to by environment
+    elseif $CSCOPE_DB != ""
+        cs add $CSCOPE_DB
+    endif
+    set csverb
+    "		0 or s: Find this C symbol
+    "		1 or g: Find this definition
+    "		2 or d: Find functions called by this function
+    "		3 or c: Find functions calling this function
+    "		4 or t: Find this text string
+    "		6 or e: Find this egrep pattern
+    "		7 or f: Find this file
+    "		8 or i: Find files #including this file
+    "		9 or a: Find places where this symbol is assigned a value
+    nnoremap <leader>c0 :cs find 0 <C-R>=expand("<cword>")<CR><CR>
+    nnoremap <leader>c1 :cs find 1 <C-R>=expand("<cword>")<CR><CR>
+    nnoremap <leader>c2 :cs find 2 <C-R>=expand("<cword>")<CR><CR>
+    nnoremap <leader>c3 :cs find 3 <C-R>=expand("<cword>")<CR><CR>
+    nnoremap <leader>c4 :cs find 4 <C-R>=expand("<cword>")<CR><CR>
+    nnoremap <leader>c6 :cs find 6 <C-R>=expand("<cword>")<CR><CR>
+    nnoremap <leader>c7 :cs find 7 <C-R>=expand("<cword>")<CR><CR>
+    nnoremap <leader>c8 :cs find 8 <C-R>=expand("<cword>")<CR><CR>
+    nnoremap <leader>c9 :cs find 9 <C-R>=expand("<cword>")<CR><CR>
+endif
