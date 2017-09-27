@@ -142,4 +142,6 @@ if has("cscope")
     nnoremap <leader>c7 :cs find 7 <C-R>=expand("<cword>")<CR><CR>
     nnoremap <leader>c8 :cs find 8 <C-R>=expand("<cword>")<CR><CR>
     nnoremap <leader>c9 :cs find 9 <C-R>=expand("<cword>")<CR><CR>
+    " refresh cscope database in current directory
+    nnoremap <leader>cr :!cscope -Rb <CR> :cs reset<CR>
 endif
