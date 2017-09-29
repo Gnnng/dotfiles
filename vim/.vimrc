@@ -108,6 +108,7 @@ nnoremap <leader>5 5gt<CR>
 nnoremap <leader>f :py3file ~/.vim/clang-format.py<CR>
 " nnoremap <leader>j :tabprevious<CR>
 " nnoremap <leader>k :tabnext<CR>
+nnoremap <leader><leader>w :w !sudo tee %<CR>
 map q: :q
 set pastetoggle=<F10>
 " add cscope
