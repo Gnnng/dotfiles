@@ -107,6 +107,8 @@ nnoremap <leader>2 2gt<CR>
 nnoremap <leader>3 3gt<CR>
 nnoremap <leader>4 4gt<CR>
 nnoremap <leader>5 5gt<CR>
+nnoremap <leader>[ gT<CR>
+nnoremap <leader>] gt<CR>
 nnoremap <leader>f :py3file ~/.vim/clang-format.py<CR>
 " nnoremap <leader>j :tabprevious<CR>
 " nnoremap <leader>k :tabnext<CR>
