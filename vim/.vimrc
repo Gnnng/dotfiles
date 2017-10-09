@@ -11,6 +11,7 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
+    nnoremap <leader>gs :GitStatus <CR>
 Plugin 'dracula/vim'
 Plugin 'w0ng/vim-hybrid'
 Plugin 'jacoborus/tender'
@@ -109,9 +110,10 @@ nnoremap <leader>4 4gt<CR>
 nnoremap <leader>5 5gt<CR>
 nnoremap <leader>[ gT<CR>
 nnoremap <leader>] gt<CR>
+nnoremap <leader>e :copen<CR>
+nnoremap <F9> :make<CR>
+nnoremap <leader><F9> :make clean && make<CR>
 nnoremap <leader>f :py3file ~/.vim/clang-format.py<CR>
-" nnoremap <leader>j :tabprevious<CR>
-" nnoremap <leader>k :tabnext<CR>
 nnoremap <leader><Bslash>w :w !sudo tee %<CR>
 nnoremap <leader><Bslash>q :q!<CR>
 map q: :q
