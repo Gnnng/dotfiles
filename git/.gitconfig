@@ -9,3 +9,9 @@
 	tool = vimdiff
 [merge]
 	tool = gvimdiff
+
+[sendemail]
+  smtpserver = smtp.gmail.com
+  smtpserverport = 587
+  smtpencryption = tls
+  smtpuser = gnnnnng@gmail.com
