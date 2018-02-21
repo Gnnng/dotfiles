@@ -3,6 +3,7 @@
 	name = Gong Deli
 [core]
 	editor = vim
+	excludesfile = ~/.gitignore_global
 [push]
 	default = simple
 [diff]
