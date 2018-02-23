@@ -96,6 +96,7 @@ autocmd BufReadPost *
 " about indent
 set expandtab smarttab shiftwidth=4 softtabstop=4 tabstop=4
 " color
+set t_Co=256
 color dracula
 set background=dark
 set encoding=utf-8
