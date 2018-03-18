@@ -125,8 +125,7 @@ map q: :q
 set pastetoggle=<F10>
 " add cscope
 if has("cscope")
-    set csprg=/usr/bin/cscope
-    set csto=0
+    set csto=1
     set cst
     set nocsverb
     " add any database in current directory
