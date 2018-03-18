@@ -100,6 +100,10 @@ set t_Co=256
 color dracula
 set background=dark
 set encoding=utf-8
+
+" fast updatetime
+set updatetime=100
+
 nnoremap <leader>w :w<CR>
 nnoremap <leader>q :q<CR>
 nnoremap <leader>s :source ~/.vimrc<CR>
