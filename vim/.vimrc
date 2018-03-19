@@ -45,7 +45,7 @@ Plugin 'Valloric/YouCompleteMe'
     nnoremap <leader>gl :YcmCompleter GoToDeclaration<CR>
     nnoremap <leader>gf :YcmCompleter GoToDefinition<CR>
     nnoremap <leader>gg :YcmCompleter GoToDefinitionElseDeclaration<CR>
-    " map <F9> :YcmCompleter FixIt<CR>
+    map <F8> :YcmCompleter FixIt<CR>
     " let g:ycm_confirm_extra_conf = 0
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
