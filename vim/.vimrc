@@ -25,6 +25,7 @@ Plugin 'vim-airline/vim-airline'
     let g:airline_section_z = ''
 Plugin 'scrooloose/nerdtree'
     map <leader>n :NERDTreeToggle<CR>:NERDTreeMirror<CR>
+    let NERDTreeIgnore = ['\.pyc$', '\.a$', '\.o$', '\.cmake$', '.*CMakeFiles.*', '\.dylib$']
 Plugin 'majutsushi/tagbar'
     map <leader>b :TagbarToggle<CR>
 Plugin 'kien/ctrlp.vim'
@@ -42,9 +43,8 @@ Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'rust-lang/rust.vim'
 " Plugin 'fatih/vim-go'
 Plugin 'Valloric/YouCompleteMe'
-    nnoremap <leader>gl :YcmCompleter GoToDeclaration<CR>
-    nnoremap <leader>gf :YcmCompleter GoToDefinition<CR>
-    nnoremap <leader>gg :YcmCompleter GoToDefinitionElseDeclaration<CR>
+    nnoremap gd :YcmCompleter GoToImprecise<CR>
+    nnoremap gn :YcmCompleter GetType<CR>
     map <F8> :YcmCompleter FixIt<CR>
     " let g:ycm_confirm_extra_conf = 0
 " All of your Plugins must be added before the following line
