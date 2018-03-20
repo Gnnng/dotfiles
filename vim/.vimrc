@@ -19,6 +19,8 @@ Plugin 'w0ng/vim-hybrid'
 Plugin 'jacoborus/tender'
 Plugin 'jdkanani/vim-material-theme'
 " pane
+Plugin 'gcmt/taboo.vim'
+    let g:taboo_tab_format = '(%N)%f%m'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'vim-airline/vim-airline'
     set laststatus=2 " required by vim-airline
