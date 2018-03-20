@@ -11,6 +11,7 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 " themes
+Plugin 'rakr/vim-one'
 Plugin 'tyrannicaltoucan/vim-quantum'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'dracula/vim'
@@ -101,10 +102,14 @@ autocmd BufReadPost *
 " about indent
 set expandtab smarttab shiftwidth=4 softtabstop=4 tabstop=4
 " color and theme
-color quantum
-set t_Co=256
-set termguicolors
+if (empty($TMUX))
+  if (has("termguicolors"))
+    set termguicolors
+  endif
+endif
 set background=dark
+color one
+set t_Co=256
 " encoding
 set encoding=utf-8
 " make vim scrolling fast
