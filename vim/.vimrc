@@ -81,7 +81,7 @@ set whichwrap+=<,>,h,l
 " about search
 set ignorecase smartcase hlsearch incsearch
 " set column ruler
-set colorcolumn=80
+" set colorcolumn=80
 " not highlight the editing line
 set nocursorline
 " show what you are typing as a command
