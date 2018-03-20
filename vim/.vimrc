@@ -10,12 +10,12 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
-Plugin 'tpope/vim-fugitive'
-    nnoremap <leader>gs :GitStatus <CR>
+" themes
 Plugin 'dracula/vim'
 Plugin 'w0ng/vim-hybrid'
 Plugin 'jacoborus/tender'
 Plugin 'jdkanani/vim-material-theme'
+" panes
 Plugin 'airblade/vim-gitgutter'
 Plugin 'vim-airline/vim-airline'
     set laststatus=2 " required by vim-airline
@@ -23,6 +23,8 @@ Plugin 'vim-airline/vim-airline'
     let g:airline_left_sep = ''
     let g:airline_right_sep = ''
     let g:airline_section_z = ''
+Plugin 'tpope/vim-fugitive'
+    nnoremap <leader>gs :GitStatus <CR>
 Plugin 'scrooloose/nerdtree'
     map <leader>n :NERDTreeToggle<CR>:NERDTreeMirror<CR>
     let NERDTreeIgnore = ['\.pyc$', '\.a$', '\.o$', '\.cmake$', '.*CMakeFiles.*', '\.dylib$']
@@ -31,22 +33,25 @@ Plugin 'majutsushi/tagbar'
 Plugin 'kien/ctrlp.vim'
     nnoremap <leader>o :CtrlP<CR>
     let g:ctrlp_extensions = ['buffertag', 'tag', 'line', 'dir']
+" display
+Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'octol/vim-cpp-enhanced-highlight'
+Plugin 'ntpeters/vim-better-whitespace'
+" edit
+Plugin 'roxma/vim-paste-easy'
 Plugin 'scrooloose/nerdcommenter'
     let g:NERDSpaceDelims=1
-" Plugin 'Yggdroot/indentLine'
-Plugin 'rdnetto/YCM-Generator'
-" Plugin 'chiel92/vim-autoformat'
-    " noremap <leader>f :Autoformat<CR> :w<CR>
-Plugin 'tpope/vim-sleuth'
 Plugin 'terryma/vim-multiple-cursors'
-Plugin 'ntpeters/vim-better-whitespace'
-Plugin 'rust-lang/rust.vim'
-" Plugin 'fatih/vim-go'
+" heavy
 Plugin 'Valloric/YouCompleteMe'
     nnoremap gd :YcmCompleter GoToImprecise<CR>
     nnoremap gn :YcmCompleter GetType<CR>
     map <F8> :YcmCompleter FixIt<CR>
+Plugin 'rdnetto/YCM-Generator'
     " let g:ycm_confirm_extra_conf = 0
+" Plugin 'chiel92/vim-autoformat'
+    " noremap <leader>f :Autoformat<CR> :w<CR>
+" disabled
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -77,8 +82,8 @@ set whichwrap+=<,>,h,l
 set ignorecase smartcase hlsearch incsearch
 " set column ruler
 set colorcolumn=80
-" highlight the editing line
-set cursorline
+" not highlight the editing line
+set nocursorline
 " show what you are typing as a command
 set showcmd
 " fast navigation between windows
@@ -91,19 +96,24 @@ autocmd BufReadPost *
     \ if line("'\"") > 0 && line("'\"") <= line("$") |
     \   exe "normal! g`\"" |
     \ endif
-" remove any trailing whitespace
-" autocmd BufRead,BufWrite * if ! &bin | silent! %s/\s\+$//ge | endif
 " about indent
 set expandtab smarttab shiftwidth=4 softtabstop=4 tabstop=4
-" color
-set t_Co=256
+" color and theme
 color dracula
+set t_Co=256
 set background=dark
+" encoding
 set encoding=utf-8
-
+" make vim scrolling fast
+set ttyfast
 " fast updatetime
 set updatetime=100
-
+" set whitespace character
+set listchars=tab:▸\ ,eol:¬
+" set non-text character
+highlight NonText guifg=#4a4a59
+highlight SpecialKey guifg=#4a4a59
+" keymapping
 nnoremap <leader>w :w<CR>
 nnoremap <leader>q :q<CR>
 nnoremap <leader>s :source ~/.vimrc<CR>
@@ -113,6 +123,10 @@ nnoremap <leader>2 2gt<CR>
 nnoremap <leader>3 3gt<CR>
 nnoremap <leader>4 4gt<CR>
 nnoremap <leader>5 5gt<CR>
+nnoremap <leader>6 6gt<CR>
+nnoremap <leader>7 7gt<CR>
+nnoremap <leader>8 8gt<CR>
+nnoremap <leader>9 9gt<CR>
 nnoremap <leader>[ gT<CR>
 nnoremap <leader>] gt<CR>
 nnoremap <leader>e :copen<CR>
