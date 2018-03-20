@@ -22,7 +22,7 @@ Plugin 'jdkanani/vim-material-theme'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'vim-airline/vim-airline'
     set laststatus=2 " required by vim-airline
-    let g:airline_theme='quantum'
+    let g:airline_theme='one'
     let g:airline_left_sep = ''
     let g:airline_right_sep = ''
     let g:airline_section_z = ''
