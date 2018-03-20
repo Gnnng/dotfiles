@@ -11,11 +11,13 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 " themes
+Plugin 'tyrannicaltoucan/vim-quantum'
+Plugin 'flazz/vim-colorschemes'
 Plugin 'dracula/vim'
 Plugin 'w0ng/vim-hybrid'
 Plugin 'jacoborus/tender'
 Plugin 'jdkanani/vim-material-theme'
-" panes
+" pane
 Plugin 'airblade/vim-gitgutter'
 Plugin 'vim-airline/vim-airline'
     set laststatus=2 " required by vim-airline
@@ -99,8 +101,9 @@ autocmd BufReadPost *
 " about indent
 set expandtab smarttab shiftwidth=4 softtabstop=4 tabstop=4
 " color and theme
-color dracula
+color quantum
 set t_Co=256
+set termguicolors
 set background=dark
 " encoding
 set encoding=utf-8
@@ -159,15 +162,15 @@ if has("cscope")
     "		7 or f: Find this file
     "		8 or i: Find files #including this file
     "		9 or a: Find places where this symbol is assigned a value
-    nnoremap <leader>c0 :cs find 0 <C-R>=expand("<cword>")<CR><CR>
-    nnoremap <leader>c1 :cs find 1 <C-R>=expand("<cword>")<CR><CR>
-    nnoremap <leader>c2 :cs find 2 <C-R>=expand("<cword>")<CR><CR>
-    nnoremap <leader>c3 :cs find 3 <C-R>=expand("<cword>")<CR><CR>
-    nnoremap <leader>c4 :cs find 4 <C-R>=expand("<cword>")<CR><CR>
-    nnoremap <leader>c6 :cs find 6 <C-R>=expand("<cword>")<CR><CR>
-    nnoremap <leader>c7 :cs find 7 <C-R>=expand("<cword>")<CR><CR>
-    nnoremap <leader>c8 :cs find 8 <C-R>=expand("<cword>")<CR><CR>
-    nnoremap <leader>c9 :cs find 9 <C-R>=expand("<cword>")<CR><CR>
+    nnoremap g0 :cs find 0 <C-R>=expand("<cword>")<CR><CR>
+    nnoremap g1 :cs find 1 <C-R>=expand("<cword>")<CR><CR>
+    nnoremap g2 :cs find 2 <C-R>=expand("<cword>")<CR><CR>
+    nnoremap g3 :cs find 3 <C-R>=expand("<cword>")<CR><CR>
+    nnoremap g4 :cs find 4 <C-R>=expand("<cword>")<CR><CR>
+    nnoremap g6 :cs find 6 <C-R>=expand("<cword>")<CR><CR>
+    nnoremap g7 :cs find 7 <C-R>=expand("<cword>")<CR><CR>
+    nnoremap g8 :cs find 8 <C-R>=expand("<cword>")<CR><CR>
+    nnoremap g9 :cs find 9 <C-R>=expand("<cword>")<CR><CR>
     " refresh cscope database in current directory
     nnoremap <leader>cr :!cscope -Rb <CR> :cs reset<CR>
 endif
@@ -181,5 +184,5 @@ if executable('ag')
 
   " ag is fast enough that CtrlP doesn't need to cache
   let g:ctrlp_use_caching = 0
-  nnoremap <leader>cw :grep <C-R>=expand("<cword>")<CR><CR>
+  nnoremap gw :grep <C-R>=expand("<cword>")<CR><CR>
 endif
