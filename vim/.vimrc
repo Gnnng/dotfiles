@@ -137,7 +137,7 @@ nnoremap <leader>8 8gt<CR>
 nnoremap <leader>9 9gt<CR>
 nnoremap <leader>[ gT<CR>
 nnoremap <leader>] gt<CR>
-nnoremap <leader>e :copen<CR>
+nnoremap <leader>e :botright cwindow<CR>
 nnoremap <F9> :make<CR>
 nnoremap <leader><F9> :make clean && make<CR>
 nnoremap <leader>f :py3file ~/.vim/clang-format.py<CR>
