@@ -54,6 +54,7 @@ Plugin 'Valloric/YouCompleteMe'
     map <F8> :YcmCompleter FixIt<CR>
 Plugin 'rdnetto/YCM-Generator'
     " let g:ycm_confirm_extra_conf = 0
+" Plugin 'w0rp/ale'
 " Plugin 'chiel92/vim-autoformat'
     " noremap <leader>f :Autoformat<CR> :w<CR>
 " disabled
