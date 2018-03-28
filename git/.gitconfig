@@ -12,6 +12,7 @@
 	tool = gvimdiff
 [alias]
     url =! bash -c 'git config --get remote.origin.url | sed -E "s/.+:\\(.+\\)\\.git$/https:\\\\/\\\\/github\\\\.com\\\\/\\\\1/g"'
+    untracked =!git ls-files -o --exclude-standard
 
 [sendemail]
   smtpserver = smtp.gmail.com
