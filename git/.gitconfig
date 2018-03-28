@@ -15,3 +15,7 @@
   smtpserverport = 587
   smtpencryption = tls
   smtpuser = gnnnnng@gmail.com
+[mergetool "fugitive"]
+	cmd = vim -f -c \"Gvdiff\" \"$MERGED\"
+[merge]
+	tool = fugitive
