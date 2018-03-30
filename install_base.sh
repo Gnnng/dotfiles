@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # prerequisite
-packages="build-essential pkg-config curl git python-setuptools ruby stow zsh tmux cscope ctags vim"
+packages="build-essential pkg-config curl git python-setuptools ruby stow zsh tmux cscope ctags vim silversearcher-ag"
 sudo apt-get update && sudo apt-get install -y $packages
 
 # package mananer for vim: Vundle
