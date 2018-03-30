@@ -10,7 +10,7 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 git clone https://github.com/zsh-users/antigen.git ~/dotfiles/antigen
 
 # finall, stow them all
-stow_packages="antigen-zsh vim tmux git gdb"
+stow_packages="antigen-zsh vim tmux git gdb config"
 stow $stow_packages
 
 # read .vimrc and install
