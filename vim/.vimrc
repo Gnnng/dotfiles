@@ -130,7 +130,8 @@ vnoremap <leader>gh <Esc>:!echo `git url`/blob/`git rev-parse HEAD`/%\#L<C-R>=li
 " keymapping
 nnoremap <leader>w :w<CR>
 nnoremap <leader>q :q<CR>
-nnoremap <leader>s :source ~/.vimrc<CR>
+nnoremap <leader>vs :source ~/.vimrc<CR>
+nnoremap <leader>ve :tabe ~/.vimrc<CR>
 nnoremap <leader>t :tabnew<CR>
 nnoremap <leader>1 1gt<CR>
 nnoremap <leader>2 2gt<CR>
