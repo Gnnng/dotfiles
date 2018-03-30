@@ -133,7 +133,7 @@ nnoremap <leader>q :q<CR>
 nnoremap <leader>vs :source ~/.vimrc<CR>
 nnoremap <leader>ve :tabe ~/.vimrc<CR>
 if has('nvim')
-    nnoremap <leader>c :tabe<CR>:terminal<CR>i
+    nnoremap <leader>z :tabe<CR>:terminal<CR>i
     tnoremap <Esc> <C-\><C-n>
 endif
 nnoremap <leader>t :tabnew<CR>
