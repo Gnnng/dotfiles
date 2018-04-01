@@ -1,0 +1,14 @@
+cache:
+    directories:
+        - $HOME/dotfiles/.repo
+        - $HOME/.vim/plugged
+
+os:
+    - osx
+    - linux
+
+script:
+    - cd $HOME
+    - git clone https://github.com/Gnnng/dotfiles.git
+    - cd dotfiles
+    - ./install.sh
