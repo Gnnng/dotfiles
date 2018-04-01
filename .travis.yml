@@ -10,7 +10,10 @@ os:
     - linux
 
 script:
-    - cd $HOME
-    - git clone https://github.com/Gnnng/dotfiles.git
-    - cd dotfiles
+    - mkdir -p ~/dotfiles && cd $HOME/dotfiles
+    - git init
+    - git remote add origin PATH/TO/REPO
+    - git fetch
+    - git reset origin/master
+    - git checkout -t origin/master
     - ./install.sh
