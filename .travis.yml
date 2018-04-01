@@ -1,4 +1,5 @@
 language: generic
+sudo: required
 
 cache:
     directories:
@@ -11,3 +12,7 @@ os:
 script:
     - cd $HOME && git clone https://github.com/Gnnng/dotfiles
     - cd $HOME/dotfiles && ./install.sh
+
+matrix:
+  allow_failures:
+    - os: osx
