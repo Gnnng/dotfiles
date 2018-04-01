@@ -89,7 +89,7 @@ if (empty($TMUX))
   endif
 endif
 set background=dark
-color tender
+silent! colorscheme tender
 set t_Co=256
 " encoding
 set encoding=utf-8
