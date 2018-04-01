@@ -13,6 +13,9 @@ git submodule update --init --depth 1
 apt_packages="build-essential pkg-config curl python-setuptools ruby stow zsh tmux cscope ctags vim silversearcher-ag cmake"
 sudo apt-get update && sudo apt-get install -y $apt_packages
 
+# install neovim
+./install_neovim.sh
+
 # finall, stow them all
 stow_packages="zsh vim neovim tmux git gdb"
 stow $stow_packages
