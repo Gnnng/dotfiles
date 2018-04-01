@@ -12,7 +12,7 @@ os:
 script:
     - mkdir -p ~/dotfiles && cd $HOME/dotfiles
     - git init
-    - git remote add origin PATH/TO/REPO
+    - git remote add origin https://github.com/Gnnng/dotfiles
     - git fetch
     - git reset origin/master
     - git checkout -t origin/master
