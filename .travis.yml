@@ -17,6 +17,7 @@ before_script:
 
 script:
     - cd $HOME/dotfiles && ./install.sh
+    - ls -al $HOME/
 
 matrix:
   allow_failures:
