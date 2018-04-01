@@ -2,7 +2,6 @@ language: generic
 
 cache:
     directories:
-        - $HOME/dotfiles/.repo
         - $HOME/.vim/plugged
 
 os:
@@ -10,10 +9,5 @@ os:
     - linux
 
 script:
-    - mkdir -p ~/dotfiles && cd $HOME/dotfiles
-    - git init
-    - git remote add origin https://github.com/Gnnng/dotfiles
-    - git fetch
-    - git reset origin/master
-    - git checkout master
-    - ./install.sh
+    - cd $HOME && git clone https://github.com/Gnnng/dotfiles
+    - cd $HOME/dotfiles && ./install.sh
