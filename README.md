@@ -6,6 +6,8 @@ Learn how to use [stow](https://www.gnu.org/software/stow/) first.
 
 - [x] zplug
 - [x] vim-plug
-- [ ] install scripts
+- [x] install scripts
 - [ ] travis
 - [ ] bootstrap script
+- [ ] make the scripts location independent
+- [ ] git.io shortened script
