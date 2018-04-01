@@ -15,5 +15,5 @@ script:
     - git remote add origin https://github.com/Gnnng/dotfiles
     - git fetch
     - git reset origin/master
-    - git checkout -t origin/master
+    - git checkout master
     - ./install.sh
