@@ -1,4 +1,5 @@
-# dotfiles
+
+# dotfiles [![Build Status](https://travis-ci.org/Gnnng/dotfiles.svg?branch=master)](https://travis-ci.org/Gnnng/dotfiles)
 
 Learn how to use [stow](https://www.gnu.org/software/stow/) first.
 
