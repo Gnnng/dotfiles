@@ -1,7 +1,9 @@
 #!/bin/bash
 
-echo "deb http://ppa.launchpad.net/neovim-ppa/stable/ubuntu xenial main" | sudo tee -a /etc/apt/sources.list.d/neovim.list
-echo "deb-src http://ppa.launchpad.net/neovim-ppa/stable/ubuntu xenial main" | sudo tee -a /etc/apt/sources.list.d/neovim.list
+
+sudo apt-get install -y apt-transport-https
+echo "deb https://ppa.launchpad.net/neovim-ppa/stable/ubuntu xenial main" | sudo tee -a /etc/apt/sources.list.d/neovim.list
+echo "deb-src https://ppa.launchpad.net/neovim-ppa/stable/ubuntu xenial main" | sudo tee -a /etc/apt/sources.list.d/neovim.list
 
 sudo apt-get update
 sudo apt-get install -y neovim
