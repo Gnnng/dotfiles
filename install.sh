@@ -21,7 +21,7 @@ stow_packages="zsh vim neovim tmux git gdb"
 stow $stow_packages
 
 # read .vimrc and install
-vim +PlugInstall +qall
+nvim +PlugInstall +qall
 
 # read .zshrc and install
 zsh -i -c exit
