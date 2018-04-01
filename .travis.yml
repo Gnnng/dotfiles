@@ -9,8 +9,13 @@ os:
     - osx
     - linux
 
-script:
+install:
     - cd $HOME && git clone https://github.com/Gnnng/dotfiles
+
+before_script:
+    - cd $HOME && rm -f .gitconfig .zshrc
+
+script:
     - cd $HOME/dotfiles && ./install.sh
 
 matrix:
