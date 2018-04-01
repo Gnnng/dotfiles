@@ -2,79 +2,57 @@ let mapleader = "\<Space>"
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
+" vim-plug install directory
+call plug#begin('~/.vim/plugged')
 
-" let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
 " themes
-Plugin 'rakr/vim-one'
-Plugin 'tyrannicaltoucan/vim-quantum'
-Plugin 'flazz/vim-colorschemes'
-Plugin 'dracula/vim'
-Plugin 'w0ng/vim-hybrid'
-Plugin 'jacoborus/tender'
-Plugin 'jdkanani/vim-material-theme'
+Plug 'rakr/vim-one'
+Plug 'tyrannicaltoucan/vim-quantum'
+Plug 'flazz/vim-colorschemes'
+Plug 'dracula/vim'
+Plug 'w0ng/vim-hybrid'
+Plug 'jacoborus/tender'
+Plug 'jdkanani/vim-material-theme'
 " pane
-Plugin 'gcmt/taboo.vim'
+Plug 'gcmt/taboo.vim'
     let g:taboo_tab_format = ' %N %f%m '
-Plugin 'airblade/vim-gitgutter'
-Plugin 'vim-airline/vim-airline'
+Plug 'airblade/vim-gitgutter'
+Plug 'vim-airline/vim-airline'
     set laststatus=2 " required by vim-airline
     let g:airline_theme='quantum'
     let g:airline_left_sep = ''
     let g:airline_right_sep = ''
     let g:airline_section_z = ''
-Plugin 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive'
     nnoremap <leader>gs :GitStatus <CR>
-Plugin 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree'
     map <leader>n :NERDTreeToggle<CR>:NERDTreeMirror<CR>
     let NERDTreeIgnore = ['\.pyc$', '\.a$', '\.o$', '\.cmake$', '.*CMakeFiles.*', '\.dylib$']
-Plugin 'majutsushi/tagbar'
+Plug 'majutsushi/tagbar'
     map <leader>b :TagbarToggle<CR>
-Plugin 'kien/ctrlp.vim'
+Plug 'kien/ctrlp.vim'
     nnoremap <leader>o :CtrlP<CR>
     let g:ctrlp_extensions = ['buffertag', 'tag', 'line', 'dir']
 " display
-Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'octol/vim-cpp-enhanced-highlight'
-Plugin 'ntpeters/vim-better-whitespace'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'octol/vim-cpp-enhanced-highlight'
+Plug 'ntpeters/vim-better-whitespace'
 " edit
-Plugin 'roxma/vim-paste-easy'
-Plugin 'scrooloose/nerdcommenter'
+Plug 'roxma/vim-paste-easy'
+Plug 'scrooloose/nerdcommenter'
     let g:NERDSpaceDelims=1
-Plugin 'terryma/vim-multiple-cursors'
+Plug 'terryma/vim-multiple-cursors'
 " heavy
-Plugin 'Valloric/YouCompleteMe'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --all' }
     nnoremap gd :YcmCompleter GoToImprecise<CR>
     nnoremap gn :YcmCompleter GetType<CR>
     map <F8> :YcmCompleter FixIt<CR>
-Plugin 'rdnetto/YCM-Generator'
-    " let g:ycm_confirm_extra_conf = 0
-" Plugin 'w0rp/ale'
-" Plugin 'chiel92/vim-autoformat'
+" Plug 'w0rp/ale'
+" Plug 'chiel92/vim-autoformat'
     " noremap <leader>f :Autoformat<CR> :w<CR>
 " disabled
 " All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-
-" To ignore plugin indent changes, instead use:
-" filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
-"
-"
+call plug#end()            " required
 
 " Basic settings
 
