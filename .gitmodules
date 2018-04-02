@@ -1,0 +1,6 @@
+[submodule ".repo/vim-plug"]
+	path = .repo/vim-plug
+	url = https://github.com/junegunn/vim-plug.git
+[submodule ".repo/zplug"]
+	path = .repo/zplug
+	url = https://github.com/zplug/zplug
