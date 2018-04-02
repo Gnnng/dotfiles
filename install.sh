@@ -17,12 +17,10 @@ sudo apt-get update && sudo apt-get install -y $apt_packages
 stow_packages="zsh vim neovim tmux git gdb"
 stow $stow_packages
 
-./install_neovim.sh
-
-# read .vimrc and install
-nvim +PlugInstall +qall
+# optional, won't stop running
+./install_neovim.sh && nvim +PlugInstall +qall || echo nvim and vim-plug not installed
 
 # read .zshrc and install
-zsh -i -c exit
+zsh -i -c exit 0
 
 echo -e "Finish installing, run this to make zsh the default:\nchsh -s $(which zsh)"
