@@ -14,6 +14,14 @@ zplug "zsh-users/zsh-autosuggestions", defer:1
 zplug "zsh-users/zsh-completions", use:"*.plugin.zsh"
 zplug "zsh-users/zsh-syntax-highlighting", use:"*.plugin.zsh", defer:3
 
+# Install plugins if there are plugins that have not been installed
+if ! zplug check --verbose; then
+    zplug install
+fi
+
+# Then, source plugins and add commands to $PATH
+zplug load
+
 # zstyle completions
 zstyle '*' single-ignored show
 zstyle ':completion:*:*:*:*:*' menu select
@@ -31,13 +39,6 @@ zstyle ':completion:*:messages' format ' %F{purple} -- %d --%f'
 zstyle ':completion:*:warnings' format ' %F{red}-- no matches found --%f'
 zstyle ':completion:*:default' list-prompt '%S%M matches%s'
 
-# Install plugins if there are plugins that have not been installed
-if ! zplug check --verbose; then
-    zplug install
-fi
-
-# Then, source plugins and add commands to $PATH
-zplug load
 
 # machine-specific zshrc
 [ -f ~/.zshrc_local ] && source ~/.zshrc_local
