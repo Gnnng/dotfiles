@@ -39,6 +39,9 @@ zstyle ':completion:*:messages' format ' %F{purple} -- %d --%f'
 zstyle ':completion:*:warnings' format ' %F{red}-- no matches found --%f'
 zstyle ':completion:*:default' list-prompt '%S%M matches%s'
 
+# workaround for ls coloring
+export CLICOLOR=1
+ls --color=auto &> /dev/null && alias ls='ls --color=auto'
 
 # machine-specific zshrc
 [ -f ~/.zshrc_local ] && source ~/.zshrc_local
