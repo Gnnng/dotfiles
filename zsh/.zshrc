@@ -31,10 +31,6 @@ zstyle ':completion:*:messages' format ' %F{purple} -- %d --%f'
 zstyle ':completion:*:warnings' format ' %F{red}-- no matches found --%f'
 zstyle ':completion:*:default' list-prompt '%S%M matches%s'
 
-# Aliases
-alias ls='ls -G'
-alias less='less -R'
-
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
     zplug install
