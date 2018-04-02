@@ -17,8 +17,10 @@ sudo apt-get update && sudo apt-get install -y $apt_packages
 stow_packages="zsh vim neovim tmux git gdb"
 stow $stow_packages
 
+./install_neovim.sh
+
 # read .vimrc and install
-vim +PlugInstall +qall
+nvim +PlugInstall +qall
 
 # read .zshrc and install
 zsh -i -c exit
