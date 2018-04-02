@@ -43,7 +43,7 @@ Plug 'scrooloose/nerdcommenter'
     let g:NERDSpaceDelims=1
 Plug 'terryma/vim-multiple-cursors'
 " heavy
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --go-completer --js-completer --quiet' }
+silent! Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --go-completer --js-completer --quiet' }
     nnoremap gd :YcmCompleter GoToImprecise<CR>
     nnoremap gn :YcmCompleter GetType<CR>
     map <F8> :YcmCompleter FixIt<CR>
