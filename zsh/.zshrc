@@ -13,6 +13,7 @@ zplug "so-fancy/diff-so-fancy", as:command, use:diff-so-fancy
 zplug "zsh-users/zsh-autosuggestions", defer:1
 zplug "zsh-users/zsh-completions", use:"*.plugin.zsh"
 zplug "zsh-users/zsh-syntax-highlighting", use:"*.plugin.zsh", defer:3
+zplug "robbyrussell/oh-my-zsh", use:"lib/*.zsh"
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
@@ -21,27 +22,6 @@ fi
 
 # Then, source plugins and add commands to $PATH
 zplug load
-
-# zstyle completions
-zstyle '*' single-ignored show
-zstyle ':completion:*:*:*:*:*' menu select
-zstyle ':completion:*' format ' %F{yellow}-- %d --%f'
-zstyle ':completion:*' group-name ''
-zstyle ':completion:*' verbose yes
-zstyle ':completion:*' list-colors ''
-zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
-zstyle ':completion:*:matches' group 'yes'
-zstyle ':completion:*:options' description 'yes'
-zstyle ':completion:*:options' auto-description '%d'
-zstyle ':completion:*:corrections' format ' %F{green}-- %d (errors: %e) --%f'
-zstyle ':completion:*:descriptions' format ' %F{yellow}-- %d --%f'
-zstyle ':completion:*:messages' format ' %F{purple} -- %d --%f'
-zstyle ':completion:*:warnings' format ' %F{red}-- no matches found --%f'
-zstyle ':completion:*:default' list-prompt '%S%M matches%s'
-
-# workaround for ls coloring
-export CLICOLOR=1
-ls --color=auto &> /dev/null && alias ls='ls --color=auto'
 
 # machine-specific zshrc
 [ -f ~/.zshrc_local ] && source ~/.zshrc_local
