@@ -21,6 +21,12 @@ if ! zplug check --verbose; then
     zplug install
 fi
 
+# setup iterm2 user-defined variables
+iterm2_set_user_var() {
+    printf "\033]1337;SetUserVar=%s=%s\007" "$1" $(printf "%s" "$2" | base64 | tr -d '\n')
+}
+iterm2_set_user_var iTermHostName $(hostname)
+
 # Then, source plugins and add commands to $PATH
 zplug load
 
