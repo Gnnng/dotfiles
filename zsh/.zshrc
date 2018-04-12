@@ -14,6 +14,7 @@ zplug "zsh-users/zsh-autosuggestions", defer:1
 zplug "zsh-users/zsh-completions", use:"*.plugin.zsh"
 zplug "zsh-users/zsh-syntax-highlighting", use:"*.plugin.zsh", defer:3
 zplug "robbyrussell/oh-my-zsh", use:"lib/*.zsh"
+unsetopt share_history
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
