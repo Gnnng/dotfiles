@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # exit upon error
-set -e
+set -e -x
 
 # make sure git is available
 which git

@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -x -e
+
 sudo apt-get update
 
 # to use add-apt-repository
