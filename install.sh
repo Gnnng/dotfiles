@@ -10,8 +10,21 @@ which git
 git submodule update --init --depth 1
 
 # TODO: conditional installation for ubuntu
-apt_packages="build-essential pkg-config curl python-setuptools ruby stow zsh tmux cscope ctags vim silversearcher-ag cmake"
-sudo apt-get update && sudo apt-get install -y $apt_packages
+sudo apt-get update && sudo apt-get install -y \
+    build-essential \
+    cmake \
+    curl \
+    cscope \
+    ctags \
+    git-extras \
+    pkg-config \
+    python-setuptools \
+    ruby \
+    silversearcher-ag \
+    stow \
+    tmux \
+    vim \
+    zsh
 
 # finall, stow them all
 stow_packages="zsh vim neovim tmux git gdb"
