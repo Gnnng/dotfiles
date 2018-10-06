@@ -7,7 +7,6 @@ zplug "plugins/z", from:oh-my-zsh
 zplug "plugins/git", from:oh-my-zsh
 zplug "plugins/git-extras", from:oh-my-zsh
 zplug "plugins/colored-man-pages", from:oh-my-zsh
-zplug "plugins/command-not-found", from:oh-my-zsh
 zplug "plugins/common-aliases", from:oh-my-zsh
 zplug "so-fancy/diff-so-fancy", as:command, use:diff-so-fancy
 zplug "zsh-users/zsh-autosuggestions", defer:1
