@@ -42,6 +42,8 @@ Plug 'roxma/vim-paste-easy'
 Plug 'scrooloose/nerdcommenter'
     let g:NERDSpaceDelims=1
 Plug 'terryma/vim-multiple-cursors'
+" syntax
+Plug 'aliva/vim-fish'
 " heavy
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --go-completer --js-completer --quiet' }
     nnoremap gd :YcmCompleter GoToImprecise<CR>
