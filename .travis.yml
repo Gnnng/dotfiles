@@ -9,7 +9,7 @@ script:
     - cp -f sparse-checkout .git/info/sparse-checkout
     - git config --local core.sparseCheckout true
     - git config --local status.showUntrackedFiles no
-    - git --git-dir $PWD/.git --work-tree=$HOME checkout master
+    - git --git-dir $PWD/.git --work-tree=$HOME checkout
     - ls -al $HOME/
 
 matrix:
