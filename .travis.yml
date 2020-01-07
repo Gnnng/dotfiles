@@ -5,15 +5,11 @@ os:
     - osx
     - linux
 
-install:
-    - cd $HOME && git clone https://github.com/Gnnng/dotfiles
-
 script:
-    - cd $HOME/dotfiles
     - cp -f sparse-checkout .git/info/sparse-checkout
     - git config --local core.sparseCheckout true
     - git config --local status.showUntrackedFiles no
-    - git --git-dir $HOME/dotfiles/.git --work-tree=$HOME checkout master
+    - git --git-dir $PWD/.git --work-tree=$HOME checkout master
     - ls -al $HOME/
 
 matrix:
