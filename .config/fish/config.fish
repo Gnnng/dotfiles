@@ -25,3 +25,5 @@ abbr -a glog        'git log --oneline --decorate --graph'
 abbr -a gloga       'git log --oneline --decorate --graph --all'
 abbr -a glol        'git log --graph --pretty='\''%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'\'
 abbr -a glola       'git log --graph --pretty='\''%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'\'' --all'
+
+abbr -a dotfiles    'git --git-dir $HOME/dotfiles/.git --work-tree=$HOME'
