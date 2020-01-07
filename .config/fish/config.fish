@@ -26,4 +26,4 @@ abbr -a gloga       'git log --oneline --decorate --graph --all'
 abbr -a glol        'git log --graph --pretty='\''%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'\'
 abbr -a glola       'git log --graph --pretty='\''%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'\'' --all'
 
-[ -f ~/.zshrc_local ]; and bass source ~/.zshrc_local
+abbr -a dotfiles    'git --git-dir $HOME/.dotfiles --work-tree=$HOME'

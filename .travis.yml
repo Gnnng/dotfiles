@@ -1,23 +1,12 @@
 language: generic
 sudo: required
 
-cache:
-    directories:
-        - $HOME/.vim/plugged
-
 os:
     - osx
     - linux
 
-install:
-    - cd $HOME && git clone https://github.com/Gnnng/dotfiles
-
-before_script:
-    - cd $HOME && rm -f .gitconfig .zshrc
-
 script:
-    - cd $HOME/dotfiles && ./install.sh
-    - ls -al $HOME/
+    - echo hello
 
 matrix:
   allow_failures:
