@@ -1,10 +1,6 @@
 language: generic
 sudo: required
 
-cache:
-    directories:
-        - $HOME/.vim/plugged
-
 os:
     - osx
     - linux
@@ -12,11 +8,12 @@ os:
 install:
     - cd $HOME && git clone https://github.com/Gnnng/dotfiles
 
-before_script:
-    - cd $HOME && rm -f .gitconfig .zshrc
-
 script:
-    - cd $HOME/dotfiles && ./install.sh
+    - cd $HOME/dotfiles
+    - cp -f sparse-checkout .git/info/sparse-checkout
+    - git config --local core.sparseCheckout true
+    - git config --local status.showUntrackedFiles no
+    - git --git-dir $HOME/dotfiles/.git --work-tree=$HOME checkout master
     - ls -al $HOME/
 
 matrix:
