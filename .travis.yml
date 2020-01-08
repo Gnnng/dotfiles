@@ -13,6 +13,7 @@ script:
       !.travis.yml
       EOF
     - |
+      shopt -s expand_aliases
       alias dotfiles='git --git-dir $HOME/.dotfiles --work-tree=$HOME'
       dotfiles config --local core.sparseCheckout true
       dotfiles config --local status.showUntrackedFiles no
