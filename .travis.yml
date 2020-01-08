@@ -6,8 +6,15 @@ os:
     - linux
 
 script:
-    - echo hello
-
-matrix:
-  allow_failures:
-    - os: osx
+    - |
+      cat << EOF > ${TRAVIS_BUILD_DIR}/.git/info/sparse-checkout
+      .*
+      !.travis.yml
+      EOF
+    - shopt -s expand_aliases
+    - alias dotfiles='git --git-dir ${TRAVIS_BUILD_DIR}/.git --work-tree=$HOME'
+    - dotfiles config --local core.sparseCheckout true
+    - dotfiles config --local status.showUntrackedFiles no
+    - dotfiles checkout -f
+    - dotfiles status
+    - ls -al $HOME
