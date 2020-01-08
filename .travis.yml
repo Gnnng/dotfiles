@@ -5,9 +5,6 @@ os:
     - osx
     - linux
 
-before_script:
-    - rm $HOME/.gitconfig
-
 script:
     - |
       cat << EOF > ${TRAVIS_BUILD_DIR}/.git/info/sparse-checkout
@@ -18,5 +15,6 @@ script:
     - alias dotfiles='git --git-dir ${TRAVIS_BUILD_DIR}/.git --work-tree=$HOME'
     - dotfiles config --local core.sparseCheckout true
     - dotfiles config --local status.showUntrackedFiles no
-    - dotfiles checkout
+    - dotfiles checkout -f
     - dotfiles status
+    - ls -al $HOME
