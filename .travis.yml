@@ -6,19 +6,17 @@ os:
     - linux
 
 script:
-    - git clone --bare https://github.com/Gnnng/dotfiles $HOME/.dotfiles
     - |
-      cat << EOF > $HOME/.dotfiles/info/sparse-checkout
+      cat << EOF > ${TRAVIS_BUILD_DIR}/.git/info/sparse-checkout
       .*
       !.travis.yml
       EOF
-    - |
-      shopt -s expand_aliases
-      alias dotfiles='git --git-dir $HOME/.dotfiles --work-tree=$HOME'
-      dotfiles config --local core.sparseCheckout true
-      dotfiles config --local status.showUntrackedFiles no
-      dotfiles checkout ${TRAVIS_COMMIT}
-      dotfiles status
+    - shopt -s expand_aliases
+    - alias dotfiles='git --git-dir ${TRAVIS_BUILD_DIR}/.git --work-tree=$HOME'
+    - dotfiles config --local core.sparseCheckout true
+    - dotfiles config --local status.showUntrackedFiles no
+    - dotfiles checkout -f
+    - dotfiles status
 
 # matrix:
   # allow_failures:
