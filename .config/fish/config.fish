@@ -27,3 +27,5 @@ abbr -a glol        'git log --graph --pretty='\''%Cred%h%Creset -%C(yellow)%d%C
 abbr -a glola       'git log --graph --pretty='\''%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'\'' --all'
 
 abbr -a dotfiles    'git --git-dir $HOME/.dotfiles --work-tree=$HOME'
+
+[ -f ~/.profile ]; and bass source ~/.profile
