@@ -106,8 +106,8 @@ set listchars=tab:▸\ ,eol:¬
 highlight NonText guifg=#4a4a59
 highlight SpecialKey guifg=#4a4a59
 " show the github permlink for the selected line(s). Adapted from https://felixge.de/2013/08/08/vim-trick-open-current-line-on-github.html
-nnoremap <leader>gh :!echo `git url`/blob/`git rev-parse HEAD`/%\#L<C-R>=line('.')<CR><CR>
-vnoremap <leader>gh <Esc>:!echo `git url`/blob/`git rev-parse HEAD`/%\#L<C-R>=line("'<")<CR>-L<C-R>=line("'>")<CR><CR>
+nnoremap <leader>gh :!echo (git url)/blob/(git rev-parse HEAD)/%\#L<C-R>=line('.')<CR><CR>
+vnoremap <leader>gh <Esc>:!echo (git url)/blob/(git rev-parse HEAD)/%\#L<C-R>=line("'<")<CR>-L<C-R>=line("'>")<CR><CR>
 " keymapping
 nnoremap <leader>w :w<CR>
 nnoremap <leader>q :q<CR>
