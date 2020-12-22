@@ -45,10 +45,10 @@ Plug 'terryma/vim-multiple-cursors'
 " syntax
 Plug 'aliva/vim-fish'
 " heavy
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --go-completer --js-completer --quiet' }
-    nnoremap gd :YcmCompleter GoToImprecise<CR>
-    nnoremap gn :YcmCompleter GetType<CR>
-    map <F8> :YcmCompleter FixIt<CR>
+" Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --go-completer --js-completer --quiet' }
+    " nnoremap gd :YcmCompleter GoToImprecise<CR>
+    " nnoremap gn :YcmCompleter GetType<CR>
+    " map <F8> :YcmCompleter FixIt<CR>
 " Plug 'w0rp/ale'
 " Plug 'chiel92/vim-autoformat'
     " noremap <leader>f :Autoformat<CR> :w<CR>
