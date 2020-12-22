@@ -28,4 +28,7 @@ abbr -a glola       'git log --graph --pretty='\''%Cred%h%Creset -%C(yellow)%d%C
 
 abbr -a dotfiles    'git --git-dir $HOME/.dotfiles --work-tree=$HOME'
 
+abbr -a dc          'docker-compose'
+abbr -a k           'kubectl'
+
 [ -f ~/.profile ]; and bass source ~/.profile
